@@ -1,12 +1,14 @@
 var React = require('react');
 var styles = require('../styles/index');
-
 var GetCity = require('../components/GetCity');
+var getForcast = require('../helpers/api').getForcast;
+var getCurrentWeather = require('../helpers/api').getCurrentWeather;
+var ForecastContainer = require('../containers/ForecastContainer');
 
 var SearchCityContainer = React.createClass({
-  // contextTypes: {
-  //   router: React.PropTypes.object.isRequired
-  // },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
     return {
       cityAndState: ''
@@ -23,11 +25,13 @@ var SearchCityContainer = React.createClass({
     this.setState({
       cityAndState: ''
     });
-    // this.context.router.push('/search/' + this.state.cityAndState);
+    // getForcast(this.state.cityAndState);
+    this.context.router.push('/forecast/' + this.state.cityAndState);
+    // getCurrentWeather(this.state.cityAndState)
   },
   render: function () {
     return (
-      <GetCity 
+      <GetCity
         onSubmitCityAndState={this.handleSubmitCityAndState}
         onUpdateCityAndState={this.handleUpdateCityAndState}
         cityAndState={this.state.cityAndState} />

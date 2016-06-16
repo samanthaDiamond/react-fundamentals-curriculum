@@ -1,7 +1,9 @@
 var styles = {
   mainContainer: {
     height: '20vh',
-    width: '100vw'
+    width: '100vw',
+    display: 'inline',
+    margin: '0 auto'
   },
   homeHeader: {
     fontSize: 45,
@@ -13,9 +15,7 @@ var styles = {
     width: '100vw',
     backgroundSize: 'cover',
     backgroundImage: "url('app/images/pattern.svg')",
-    textAlign: 'center'
-  },
-  getCityContainer: {
+    textAlign: 'center',
     paddingTop: '250px'
   }
 };

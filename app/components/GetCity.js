@@ -5,7 +5,7 @@ var PropTypes = React.PropTypes;
 function InputField (props) {
   return (
     <input
-      className='form-control'
+      className='search-city-input-form'
       placeholder='St.George, Utah'
       onChange={props.onUpdateCityAndState}
       value={props.cityAndState}
@@ -17,7 +17,7 @@ function InputField (props) {
 function Button (props) {
   return (
     <button
-      className='btn btn-primary'
+      className='btn btn-success'
       onClick={props.onSubmitCityAndState}
       type='submit'>
       {props.children}
@@ -27,14 +27,15 @@ function Button (props) {
 
 function GetCity (props) {
   return (
-    <div style={styles.homeContainer} >
-      <form onSubmit={props.onSubmitCityAndState} >
-        <InputField
-          onUpdateCityAndState={props.onUpdateCityAndState}
-          cityAndState={props.cityAndState} />
-        <Button onSubmitCityAndState={props.onSubmitCityAndState} >
-          Get weather
-        </Button>
+    <div style={styles.getCityContainer} >
+      <h1 style={styles.homeHeader}> Enter a City and State </h1>
+      <form onSubmit={props.onSubmitCityAndState} className='get-city-form'>
+          <InputField
+            onUpdateCityAndState={props.onUpdateCityAndState}
+            cityAndState={props.cityAndState} />
+          <Button onSubmitCityAndState={props.onSubmitCityAndState} >
+            Get weather
+          </Button>
       </form>
     </div>
   );

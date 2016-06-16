@@ -7,7 +7,6 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../containers/Main');
 var HomeContainer = require('../containers/HomeContainer');
 
-
 var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>

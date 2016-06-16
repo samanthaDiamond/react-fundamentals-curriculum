@@ -27,7 +27,7 @@ var SearchCityContainer = React.createClass({
   },
   render: function () {
     return (
-      <GetCity
+      <GetCity 
         onSubmitCityAndState={this.handleSubmitCityAndState}
         onUpdateCityAndState={this.handleUpdateCityAndState}
         cityAndState={this.state.cityAndState} />
